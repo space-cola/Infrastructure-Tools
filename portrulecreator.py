@@ -8,7 +8,7 @@ Created on Wed Jul 27 17:09:33 2022
 
 tcpPorts = {20:"FTP Data", 21:"FTP Control", 22:"SSH",
 23:"Telnet", 25:"SMTP", 53:"DNS", 80:"HTTP",
-88:"Kerberos"} # dicitonary of common TCP ports typically used for access control entries
+88:"Kerberos"} # dictionary of common TCP ports typically used for access control entries
 
 
 def userSelect(): # user selects an option here
@@ -64,7 +64,7 @@ aclRule()
 
 def presentation():
     global aclName
-    aclName = input ("Please enter a name for your access list, avoiding spaces: ")
+    aclName = input ("Please enter a name for your access list, avoiding spaces: ") # could use an if statement following to check for spaces or unacceptable characters
     print ("Please wait...")
     if selection == "1":
         portPort = "20"
