@@ -2,7 +2,7 @@
 """
 Created on Tue Jul 26 16:35:32 2022
 
-@author: Martin Boa
+@author: space-cola
 """
 
 import ipaddress #import IP address library for IP decimal conversion
