@@ -8,7 +8,7 @@ Created on Wed Jul 27 21:12:04 2022
 import ipaddress #use of ipaddress library to create ipaddress objects
 
 
-userentry = input ("Please enter IP address and mask in x.x.x.x/xx format eg,  1.1.1.1/24: ") # doesn't work so well with /8 !!
+userentry = input ("Please enter IP address and mask in x.x.x.x/xx format eg,  1.1.1.1/24: ")
 ipGrabber = ipaddress.IPv4Interface(userentry) # converts the address/mask into an ipaddress object
 hostIPN = ipGrabber.network # extract the network address parameter from the IPV4
 print ("\nInput Information:")
@@ -26,8 +26,8 @@ networkAddress = hostIPN.compressed.split('/') #same idea as before, splitting t
 print ("Network Address: " + networkAddress[0])
 
 # declaring the hosts in variables early, as they can be used for two purposes
-firstHost = list(hostIPN.hosts())[0] #use the hosts function normally to iterate all useable hosts, here have sliced the first value in the iteration
-lastHost = list(hostIPN.hosts())[-1] #slices the last value in the iteration
+all_hosts = list(hostIPN.hosts()) #use the hosts function normally to iterate all useable hosts, here have sliced the first value in the iteration
+firstHost, lastHost = all_hosts[0], all_hosts[-1] #credit to Lyle for solving the overhead problem here with using /8
 
 # broadcast ID
 broadcastID = lastHost+1 # can increment lastHost variable by 1 to get broadcast address
